@@ -20,6 +20,7 @@
   --tertiary-bgcolor: #f5f4fa;
   --primary-border-color: #ececec;
   --secondary-border-color: #eeeeee;
+  --tertiary-border-color: #afb1b8;
 }
 
 body {
@@ -126,8 +127,17 @@ h2 {
 .contacts-nav .link:hover,
 .contacts-nav .link:focus,
 .footer-nav .link:hover,
-.footer-nav .link:focus {
+.footer-nav .link:focus,
+.contacts-icon:hover {
   color: var(--accent-color);
+}
+.contacts-icon {
+  margin-right: 10px;
+  vertical-align: top;
+  fill: currentColor;
+}
+.envelope-icon {
+  vertical-align: baseline;
 }
 
 /* All sections styles */
@@ -135,6 +145,7 @@ h2 {
 .section-title {
   margin-top: 0;
   margin-bottom: 0;
+
   color: var(--secondary-text-color);
   font-size: 36px;
   line-height: 1.2;
@@ -161,8 +172,10 @@ h2 {
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/hero-bg.jpg);
+
   background-size: cover;
   background-position: center;
+  /*outline: 2px solid orangered;*/
 }
 
 .hero-title {
@@ -182,13 +195,24 @@ h2 {
 .benefits {
   padding: 94px 0 94px 0;
 }
+.benefits-item {
+  flex-basis: calc((100% - 90px) / 4);
+  /*outline: 1px dashed orangered;*/
+}
+.benefits-item .thumb {
+  background-color: var(--tertiary-bgcolor);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+}
+
+.benefits-item:not(:last-child) {
+  margin-right: 30px;
+}
 
 .benefits-list {
   display: flex;
 }
-/*.benefits-item {
-  outline: 1px dashed limegreen;
-}*/
 
 .benefits-item:last-child {
   margin-right: 0;
@@ -222,9 +246,9 @@ h2 {
   display: flex;
   margin: 0 auto;
 }
-.products-item {
-  /* outline: 1px dashed limegreen;*/
-}
+/* .products-item {
+  outline: 1px dashed limegreen;
+}*/
 
 .products-item:not(:last-child) {
   margin-right: 30px;
@@ -273,12 +297,76 @@ h2 {
 }
 .team-text {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.2;
 }
+.team-social {
+  display: flex;
+  padding: 0 32px;
+}
+.social-item {
+  flex-basis: calc((100% - 30px) / 4);
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-item a {
+  display: block;
+  padding: 12px 0;
+  height: 44px;
+  background-color: var(--primary-white-color);
+  color: var(--tertiary-border-color);
+  border-radius: 50%;
+}
+.team-social .link:hover,
+.team-social .link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+}
+.social-icon {
+  fill: currentColor;
+}
+
+/*  Clients */
+
+.clients {
+  text-align: center;
+  padding: 94px 0;
+}
+.clients .section-title {
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+}
+.clients-item {
+  flex-basis: calc((100% - 150px) / 6);
+  min-width: 0;
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-item .link {
+  display: block;
+  border: 1px solid var(--tertiary-border-color);
+  border-radius: 4px;
+  height: 92px;
+  padding: 16px 32px;
+  color: var(--tertiary-border-color);
+}
+.clients-item .link:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.clients-icon {
+  fill: currentColor;
+}
 
 /*  Footer */
+
 .footer {
   background-color: var(--secondary-bgcolor);
   padding-top: 60px;
@@ -307,6 +395,43 @@ h2 {
   color: var(--primary-white-color);
   margin-top: 0;
   margin-bottom: 20px;
+}
+.footer-subtitle {
+  color: var(--primary-white-color);
+  text-transform: uppercase;
+  line-height: 1.17;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.footer-body {
+  display: flex;
+  align-items: baseline;
+  gap: 70px;
+}
+.footer-social {
+  display: flex;
+  width: 206px;
+  padding: 0;
+}
+
+.footer-social-item {
+  flex-basis: calc((100% - 30px) / 4);
+}
+.footer-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-social-item .link {
+  display: block;
+  padding: 12px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-white-color);
+  border-radius: 50%;
+}
+.footer-social .link:hover,
+.footer-social .link:focus {
+  background-color: var(--accent-color);
 }
 
 /* portfolio section */
@@ -341,10 +466,17 @@ h2 {
 .portfolio-item {
   flex-basis: calc((100% - 60px) / 3);
 }
+
 .portfolio-item div {
   padding: 20px 24px;
 }
-
+.portfolio-item .link {
+  display: block;
+}
+.portfolio-item .link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .portfolio-list .link {
   color: var(--primary-text-color);
 }
